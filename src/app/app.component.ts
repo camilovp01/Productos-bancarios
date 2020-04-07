@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from './reducers';
-import { payProduct } from './actions/products.accion';
+import { AppState } from './redux/reducers';
 
 @Component({
   selector: 'app-root',
@@ -16,9 +15,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.select('products').subscribe((products) => {
-      this.products = products.products;
-    });
   }
 
 }

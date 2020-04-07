@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
 import { FooterComponent } from './components/card/footer/footer.component';
 import { FormatProductNumberPipe } from './pipes/format-product-number.pipe';
+import { HeaderComponent } from './components/header/header.component';
+import { ResumeComponent } from './components/resume/resume.component';
 
 
 
@@ -14,7 +16,9 @@ import { FormatProductNumberPipe } from './pipes/format-product-number.pipe';
     SideNavComponent,
     CardComponent,
     FooterComponent,
-    FormatProductNumberPipe
+    FormatProductNumberPipe,
+    HeaderComponent,
+    ResumeComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +28,9 @@ import { FormatProductNumberPipe } from './pipes/format-product-number.pipe';
   exports: [
     MaterialModule,
     SideNavComponent,
-    CardComponent
+    CardComponent,
+    HeaderComponent,
+    ResumeComponent
   ],
   providers: [
   ]

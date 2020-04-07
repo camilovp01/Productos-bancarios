@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        div {
+            margin: 0 10px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.menu-content {
+    display: flex;
+    align-items: center;
+}

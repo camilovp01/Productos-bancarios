@@ -1,4 +1,4 @@
-<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="side-nav">
     <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
         <a routerLinkActive="active" routerLink="{{node.url}}">{{node.name}}</a>
     </mat-tree-node>

@@ -1,0 +1,19 @@
+.side-nav {
+    margin: 24px;
+}
+
+a:visited,
+a:link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.active {
+    text-decoration: none;
+    color: rgba(0, 0, 0);
+    font-weight: bold;;
+}
+
+// .active {
+//     color: green;
+// }

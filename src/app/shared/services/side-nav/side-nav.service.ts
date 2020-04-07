@@ -19,25 +19,25 @@ export class SideNavService {
     },
     {
       name: 'TU ORGANIZADOR',
-      url: '/',
+      url: '/organizer',
     },
     {
       name: 'PAGOS',
-      url: '/',
+      url: '/payments',
     },
     {
       name: 'TRANSFERENCIAS',
-      url: '/',
+      url: '/transfers',
 
     },
     {
       name: 'CERTIFICADOS',
-      url: '/',
+      url: '/certificates',
 
     },
     {
       name: 'SEGURIDAD',
-      url: '/',
+      url: '/security',
     },
   ];
 

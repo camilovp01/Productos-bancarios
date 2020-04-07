@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MapTextService } from '../../services/map-text/map-text.service';
 
 @Component({
@@ -9,6 +9,9 @@ import { MapTextService } from '../../services/map-text/map-text.service';
 export class CardComponent implements OnInit {
 
   @Input() product: any;
+  @Input() productType: any;
+  @Input() totalProduct: number;
+  @Input() index: number;
 
   constructor(public _mapTextService: MapTextService) { }
 

@@ -1,5 +1,9 @@
 <div class="card">
-    <h4>Cuenta Ahorro (5)</h4>
+    <h4 *ngIf="index === 0">
+        {{_mapTextService.getValue(productType)}}
+        ({{totalProduct}})
+    </h4>
+    <h4 *ngIf="index > 0">&nbsp;</h4>
     <mat-card class="card-container">
 
         <mat-card-header class="card-container-header">
@@ -17,12 +21,15 @@
 
         <mat-card-content>
             <div class="card-content">
-                <h2>{{ _mapTextService.getValue(product.typeAccount)}}</h2>
-                <small>Nro. {{product.id | formatProductNumber:product.typeAccount}}</small>
+                <h2>{{ _mapTextService.getValue(product.typeAccount)}}
+                </h2>
+                <small>Nro.
+                    {{product.id | formatProductNumber:product.typeAccount}}</small>
             </div>
             <div class="card-content">
                 <small>{{ _mapTextService.getLabelAmount(product)['label']}}</small>
-                <h3>{{ _mapTextService.getLabelAmount(product)['amount'] | number:'1.2':'co'}}</h3>
+                <h3>{{ _mapTextService.getLabelAmount(product)['amount'] | number:'1.2':'co'}}
+                </h3>
             </div>
 
             <app-footer [product]="product"></app-footer>

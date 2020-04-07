@@ -1,0 +1,21 @@
+<div class="card-main">
+    <app-card *ngFor="let product of cdtFilter; let i = index" [productType]="product.typeAccount"
+        [totalProduct]="cdtFilter.length" [index]="i" [product]="product">
+    </app-card>
+
+    <app-card *ngFor="let product of cFilter; let i = index" [productType]="product.typeAccount" [index]="i"
+        [totalProduct]="cFilter.length" [product]="product">
+    </app-card>
+
+    <app-card *ngFor="let product of ccFilter; let i = index" [productType]="product.typeAccount"
+        [totalProduct]="ccFilter.length" [index]="i" [product]="product">
+    </app-card>
+
+    <app-card *ngFor="let product of caFilter; let i = index" [productType]="product.typeAccount"
+        [totalProduct]="caFilter.length" [index]="i" [product]="product">
+    </app-card>
+
+    <app-card *ngFor="let product of daFilter; let i = index" [productType]="product.typeAccount"
+        [totalProduct]="daFilter.length" [index]="i" [product]="product">
+    </app-card>
+</div>
