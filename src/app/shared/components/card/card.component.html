@@ -1,0 +1,33 @@
+<div class="card">
+    <h4>Cuenta Ahorro (5)</h4>
+    <mat-card class="card-container">
+
+        <mat-card-header class="card-container-header">
+
+            <div class="card-container-header-image">
+                <img mat-card-avatar src="assets/images/default.png" alt="Img">
+            </div>
+
+            <div class="card-container-header-detail">
+                <a href=""> <small>Ver detalle ></small></a>
+            </div>
+
+        </mat-card-header>
+
+
+        <mat-card-content>
+            <div class="card-content">
+                <h2>{{ _mapTextService.getValue(product.typeAccount)}}</h2>
+                <small>Nro. {{product.id | formatProductNumber:product.typeAccount}}</small>
+            </div>
+            <div class="card-content">
+                <small>{{ _mapTextService.getLabelAmount(product)['label']}}</small>
+                <h3>{{ _mapTextService.getLabelAmount(product)['amount'] | number:'1.2':'co'}}</h3>
+            </div>
+
+            <app-footer [product]="product"></app-footer>
+
+        </mat-card-content>
+
+    </mat-card>
+</div>

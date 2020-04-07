@@ -1,0 +1,49 @@
+.footer-content {
+    margin: 40px 12px 12px 12px;
+    &-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    &-column {
+        flex-direction: column;
+    }
+}
+
+.footer-content-cada {
+    display: flex;
+    flex-direction: column;
+    b {
+        font-size: 12px;
+    }
+}
+
+.footer-content-cdt {
+    margin: 12px 0;
+    &-date {
+        display: flex;
+        flex-direction: column;
+    }
+    b {
+        margin: 4px;
+    }
+}
+
+.footer-content-cc {
+    margin: 12px 0;
+    small {
+        margin-right: 4px;
+    }
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+    background-color: #a1a1a1;
+}
+
+.mat-primary {
+    background-color: #179bd5;
+    color: #fff;
+    width: 100%;
+}

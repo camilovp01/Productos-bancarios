@@ -1,0 +1,72 @@
+<div class="footer-content">
+    <!-- DEPOSIT_ACCOUNT && CURRENT_ACCOUNT -->
+    <div class="footer-content-row"
+        *ngIf="product.typeAccount === 'DEPOSIT_ACCOUNT' || product.typeAccount == 'CURRENT_ACCOUNT'">
+
+        <div class="footer-content-cada" *ngIf="product.typeAccount ==='CURRENT_ACCOUNT' && product.overDraftDays > 0">
+            <small>Días en sobregiro:</small>
+            <b>{{product.overDraftDays}}</b>
+        </div>
+
+        <div class="footer-content-cada" *ngIf="product.typeAccount === 'DEPOSIT_ACCOUNT'">
+            <small> En bolsillos:</small>
+            <b>{{product.productAccountBalances.saldo_actual.amount | number:'1.2':'co'}}</b>
+        </div>
+        <div class="footer-content-cada" *ngIf="product.typeAccount === 'DEPOSIT_ACCOUNT'">
+            <small> Saldo total:</small>
+            <b>{{product.productAccountBalances.saldo_disponible.amount | number:'1.2':'co'}}</b>
+        </div>
+
+    </div>
+    <!-- DEPOSIT_ACCOUNT && CURRENT_ACCOUNT -->
+
+    <!-- CERTIFIED_DEPOSIT_TERM -->
+    <div class="footer-content-column" *ngIf="product.typeAccount === 'CERTIFIED_DEPOSIT_TERM'">
+
+        <div class="footer-content-cdt">
+            <small>Plazo:</small>
+            <b>{{product.term.count}} {{ _mapTextService.getUnits(product.term.units) }}</b>
+        </div>
+
+        <div class="footer-content-cdt-date">
+            <small>Fecha de vencimiento:</small>
+            <b>{{product.dueDate | date:'dd/MMM/yyyy':'':'co' }}</b>
+        </div>
+
+    </div>
+    <!-- CERTIFIED_DEPOSIT_TERM -->
+
+    <!-- CREDIT_CARD -->
+    <div class="footer-content-column" *ngIf="product.typeAccount === 'CREDIT_CARD'">
+
+        <div *ngIf="product.productAccountBalances.valor_pago_minimo.amount <= 1">
+            <div class="footer-content-cc">
+                <small>Fecha de corte:</small>
+                <small>{{product.dueDate | date:'dd/MMM/yyyy':'':'co'}}</small>
+            </div>
+
+            <div class="footer-content-cc">
+                <small>Total gastado:</small>
+                <small>$3.336.000</small>
+            </div>
+            <mat-progress-bar mode="determinate"
+                [value]="valueProgress(product.productAccountBalances.cupo_total.amount, product.productAccountBalances.pago_total_pesos.amount)"
+                class="bar">
+            </mat-progress-bar>
+        </div>
+
+        <div *ngIf="product.productAccountBalances.valor_pago_minimo.amount > 1">
+            <div class=" footer-content-cc">
+                <small>Pago total:</small>
+                <small>$3.336.000</small>
+
+                <div class="footer-content-cc">
+                    <small>Fecha de pago:</small>
+                    <small>{{product.dueDate | date:'dd/MMM/yyyy':'':'co'}}</small>
+                </div>
+                <button mat-raised-button color="primary">Pagar</button>
+            </div>
+        </div>
+    </div>
+    <!-- CREDIT_CARD -->
+</div>

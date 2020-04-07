@@ -1,0 +1,57 @@
+.card {
+    margin: 0 10px;
+    min-width: 200px;
+    h4 {
+        margin-bottom: 4px;
+    }
+}
+
+.card-container {
+    max-width: 200px;
+    min-height: 300px;
+    &-header {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 8px;
+    }
+}
+
+.card-container-header-image {
+    display: flex;
+    // justify-content: flex-start;
+}
+
+.card-container-header-detail {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: #52b1de;
+}
+
+a:hover {
+    color: #308eb9;
+    cursor: pointer;
+}
+
+::ng-deep .mat-card-header-text {
+    margin: 0px !important;
+    display: none !important;
+}
+
+h3 {
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 6px;
+}
+
+.card-content {
+    margin: 12px;
+}
