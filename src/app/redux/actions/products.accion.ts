@@ -1,3 +1,3 @@
-import { createAction, props } from '@ngrx/store'
+import { createAction } from '@ngrx/store'
 
-export const payProduct = createAction('[FOOTER COMPONENT] pay product', props<{ id }>());
+export const toggleAction = createAction('[PAGES COMPONENT] toogle other banks');

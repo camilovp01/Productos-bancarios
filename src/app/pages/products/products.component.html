@@ -1,21 +1,46 @@
-<div class="card-main">
-    <app-card *ngFor="let product of cdtFilter; let i = index" [productType]="product.typeAccount"
-        [totalProduct]="cdtFilter.length" [index]="i" [product]="product">
-    </app-card>
+<div class="card">
 
-    <app-card *ngFor="let product of cFilter; let i = index" [productType]="product.typeAccount" [index]="i"
-        [totalProduct]="cFilter.length" [product]="product">
-    </app-card>
+    <div class="card-main" *ngIf="toggle" [@enterAnimation]>
+        <app-card *ngFor="let product of cdtFilterOtherbanks; let i = index" [productType]="product.typeAccount"
+            [totalProduct]="cdtFilterOtherbanks.length" [index]="i" [product]="product">
+        </app-card>
 
-    <app-card *ngFor="let product of ccFilter; let i = index" [productType]="product.typeAccount"
-        [totalProduct]="ccFilter.length" [index]="i" [product]="product">
-    </app-card>
+        <app-card *ngFor="let product of cFilterOtherbanks; let i = index" [productType]="product.typeAccount"
+            [index]="i" [totalProduct]="cFilterOtherbanks.length" [product]="product">
+        </app-card>
 
-    <app-card *ngFor="let product of caFilter; let i = index" [productType]="product.typeAccount"
-        [totalProduct]="caFilter.length" [index]="i" [product]="product">
-    </app-card>
+        <app-card *ngFor="let product of ccFilterOtherbanks; let i = index" [productType]="product.typeAccount"
+            [totalProduct]="ccFilterOtherbanks.length" [index]="i" [product]="product">
+        </app-card>
 
-    <app-card *ngFor="let product of daFilter; let i = index" [productType]="product.typeAccount"
-        [totalProduct]="daFilter.length" [index]="i" [product]="product">
-    </app-card>
+        <app-card *ngFor="let product of caFilterOtherbanks; let i = index" [productType]="product.typeAccount"
+            [totalProduct]="caFilterOtherbanks.length" [index]="i" [product]="product">
+        </app-card>
+
+        <app-card *ngFor="let product of daFilterOtherbanks; let i = index" [productType]="product.typeAccount"
+            [totalProduct]="daFilterOtherbanks.length" [index]="i" [product]="product">
+        </app-card>
+    </div>
+
+    <div class="card-main" [@enterAnimation]>
+        <app-card *ngFor="let product of cdtFilter; let i = index" [productType]="product.typeAccount"
+            [totalProduct]="cdtFilter.length" [index]="i" [product]="product">
+        </app-card>
+
+        <app-card *ngFor="let product of cFilter; let i = index" [productType]="product.typeAccount" [index]="i"
+            [totalProduct]="cFilter.length" [product]="product">
+        </app-card>
+
+        <app-card *ngFor="let product of ccFilter; let i = index" [productType]="product.typeAccount"
+            [totalProduct]="ccFilter.length" [index]="i" [product]="product">
+        </app-card>
+
+        <app-card *ngFor="let product of caFilter; let i = index" [productType]="product.typeAccount"
+            [totalProduct]="caFilter.length" [index]="i" [product]="product">
+        </app-card>
+
+        <app-card *ngFor="let product of daFilter; let i = index" [productType]="product.typeAccount"
+            [totalProduct]="daFilter.length" [index]="i" [product]="product">
+        </app-card>
+    </div>
 </div>

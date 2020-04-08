@@ -13,7 +13,11 @@
             <app-header></app-header>
 
             <div>
-                <div>Mostrar otros productos</div>
+                <div>
+                    <mat-slide-toggle [checked]="toggle" (toggleChange)="toogleBanks()" [labelPosition]="'before'">
+                        Mostrar otros productos
+                    </mat-slide-toggle>
+                </div>
                 <app-resume></app-resume>
             </div>
 

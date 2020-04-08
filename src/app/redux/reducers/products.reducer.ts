@@ -1,8 +1,9 @@
 import { createReducer, on } from "@ngrx/store";
-import { payProduct } from '../actions/products.accion';
+import { toggleAction } from '../actions/products.accion';
 
 export interface ProductsState {
     products: Array<any>;
+    toggle: boolean;
 
 }
 
@@ -1215,20 +1216,14 @@ const initialState: ProductsState = {
             }
         }
     ],
+    toggle: false
 };
 
 
 export const productReducer = createReducer(initialState,
 
-    //por implementar
-    on(payProduct,
-        (state, { id }) => {
-            return {
-                products: [...state.products,
-                state.products.map((product) => {
-                    return product.id = id;
-                })]
-            }
-        }
+    on(toggleAction,
+        (state) => ({ ...state, toggle: !state.toggle })
     )
+
 )
