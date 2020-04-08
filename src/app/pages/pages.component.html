@@ -1,5 +1,5 @@
 <mat-sidenav-container class="container" *ngIf="true">
-    <mat-sidenav mode="side" opened>
+    <mat-sidenav mode="side" [opened]="toggleSideNav">
         <div class="logo-container">
             <img src="assets/images/default.png" alt="Imagen/logo">
         </div>
@@ -9,12 +9,11 @@
     <mat-sidenav-content>
 
         <div class="container-main">
-
-            <app-header></app-header>
+            <app-header (toggleSideNav)="toggleNav()"></app-header>
 
             <div>
                 <div>
-                    <mat-slide-toggle [checked]="toggle" (toggleChange)="toogleBanks()" [labelPosition]="'before'">
+                    <mat-slide-toggle [checked]="toggle" (toggleChange)="toggleBanks()" [labelPosition]="'before'">
                         Mostrar otros productos
                     </mat-slide-toggle>
                 </div>

@@ -10,11 +10,11 @@
 
         <div class="footer-content-cada" *ngIf="product.typeAccount === 'DEPOSIT_ACCOUNT'">
             <small> En bolsillos:</small>
-            <b>{{product.productAccountBalances.saldo_actual.amount | number:'1.2':'co'}}</b>
+            <b>${{product.productAccountBalances.saldo_actual.amount | number:'1.2':'co'}}</b>
         </div>
         <div class="footer-content-cada" *ngIf="product.typeAccount === 'DEPOSIT_ACCOUNT'">
             <small> Saldo total:</small>
-            <b>{{product.productAccountBalances.saldo_disponible.amount | number:'1.2':'co'}}</b>
+            <b>${{product.productAccountBalances.saldo_disponible.amount | number:'1.2':'co'}}</b>
         </div>
 
     </div>

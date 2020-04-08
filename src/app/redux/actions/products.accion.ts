@@ -1,3 +1,3 @@
 import { createAction } from '@ngrx/store'
 
-export const toggleAction = createAction('[PAGES COMPONENT] toogle other banks');
+export const toggleAction = createAction('[PAGES COMPONENT] toggle other banks');

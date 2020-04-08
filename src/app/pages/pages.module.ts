@@ -5,6 +5,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { OrganizerComponent } from './organizer/organizer.component';
 import { PaymentsComponent } from './payments/payments.component';
+import { DetailComponent } from './products/detail/detail.component';
 
 
 
@@ -12,12 +13,16 @@ import { PaymentsComponent } from './payments/payments.component';
   declarations: [
     ProductsComponent,
     OrganizerComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    DetailComponent
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     SharedModule
-  ]
+  ],
+  entryComponents: [
+    DetailComponent
+  ],
 })
 export class PagesModule { }

@@ -9,11 +9,11 @@
         <mat-card-header class="card-container-header">
 
             <div class="card-container-header-image">
-                <img mat-card-avatar src="assets/images/default.png" alt="Img">
+                <img mat-card-avatar [src]="image" [alt]="productType">
             </div>
 
             <div class="card-container-header-detail">
-                <a href=""> <small>Ver detalle ></small></a>
+                <a routerLink="" (click)="openDialog(product)"> <small>Ver detalle ></small></a>
             </div>
 
         </mat-card-header>
@@ -28,7 +28,7 @@
             </div>
             <div class="card-content">
                 <small>{{ _mapTextService.getLabelAmount(product)['label']}}</small>
-                <h3>{{ _mapTextService.getLabelAmount(product)['amount'] | number:'1.2':'co'}}
+                <h3>${{ _mapTextService.getLabelAmount(product)['amount'] | number:'1.2':'co'}}
                 </h3>
             </div>
 

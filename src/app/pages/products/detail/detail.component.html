@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <h2>{{product.accountInformation.bank}}</h2>
+    </mat-card-header>
+    <mat-card-content>
+        <p><b>Nro.</b>
+            {{product.id | formatProductNumber:product.typeAccount}}
+        </p>
+        <p *ngFor="let label of labels; let i = index">
+            <b>{{label.replace('_', ' ').toUpperCase()}}</b>
+            {{values[i].amount | number:'1.2':'co'}}
+        </p>
+    </mat-card-content>
+</mat-card>

@@ -30,7 +30,8 @@ import { ResumeComponent } from './components/resume/resume.component';
     SideNavComponent,
     CardComponent,
     HeaderComponent,
-    ResumeComponent
+    ResumeComponent,
+    FormatProductNumberPipe
   ],
   providers: [
   ]

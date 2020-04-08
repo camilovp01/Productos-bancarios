@@ -11,6 +11,7 @@ import { toggleAction } from '../redux/actions/products.accion';
 export class PagesComponent implements OnInit {
 
   toggle: boolean;
+  toggleSideNav: boolean = true;
 
   constructor(private store: Store<AppState>) { }
 
@@ -18,8 +19,12 @@ export class PagesComponent implements OnInit {
     this.store.select('products').subscribe((products) => this.toggle = products.toggle);
   }
 
-  toogleBanks() {
+  toggleBanks() {
     this.store.dispatch(toggleAction());
+  }
+
+  toggleNav() {
+    this.toggleSideNav = !this.toggleSideNav
   }
 
 }
