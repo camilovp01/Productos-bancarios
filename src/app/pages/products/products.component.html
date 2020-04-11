@@ -1,5 +1,8 @@
-<div class="card">
+<ngx-spinner *ngIf="loading"></ngx-spinner>
 
+<div *ngIf="error">Ocurrió un error inesperado, vuelve a intentar</div>
+
+<div class="card" *ngIf="loaded">
     <div class="card-main" *ngIf="toggle" [@enterAnimation]>
         <app-card *ngFor="let product of cdtFilterOtherbanks; let i = index" [productType]="product.typeAccount"
             [totalProduct]="cdtFilterOtherbanks.length" [index]="i" [product]="product">
@@ -22,7 +25,7 @@
         </app-card>
     </div>
 
-    <div class="card-main" [@enterAnimation]>
+    <div class="card-main" [@enterAnimation] *ngIf="loaded">
         <app-card *ngFor="let product of cdtFilter; let i = index" [productType]="product.typeAccount"
             [totalProduct]="cdtFilter.length" [index]="i" [product]="product">
         </app-card>

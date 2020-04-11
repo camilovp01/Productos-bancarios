@@ -8,7 +8,7 @@ import { FooterComponent } from './components/card/footer/footer.component';
 import { FormatProductNumberPipe } from './pipes/format-product-number.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { ResumeComponent } from './components/resume/resume.component';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { ResumeComponent } from './components/resume/resume.component';
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     MaterialModule,
@@ -31,7 +31,8 @@ import { ResumeComponent } from './components/resume/resume.component';
     CardComponent,
     HeaderComponent,
     ResumeComponent,
-    FormatProductNumberPipe
+    FormatProductNumberPipe,
+    NgxSpinnerModule
   ],
   providers: [
   ]

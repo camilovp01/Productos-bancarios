@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/redux/reducers';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { productsLoad } from 'src/app/redux/actions/products.accion';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-products',
@@ -36,12 +38,19 @@ export class ProductsComponent implements OnInit {
   ccFilterOtherbanks: Array<any>; //CREDIT_CARD
   caFilterOtherbanks: Array<any>; //CURRENT_ACCOUNT 
   daFilterOtherbanks: Array<any>; //DEPOSIT_ACCOUNT
-  toggle: boolean;
 
-  constructor(private store: Store<AppState>) {
+  toggle: boolean;
+  loading: boolean;
+  loaded: boolean;
+  error: boolean;
+
+  constructor(private store: Store<AppState>, private spinner: NgxSpinnerService) {
+    this.spinner.show();
   }
 
   ngOnInit() {
+    this.loadProducts();
+
     this.store.select('products').subscribe((products) => {
       this.products = products.products;
       this.cdtFilter = this.products.filter((product) => product.typeAccount === "CERTIFIED_DEPOSIT_TERM" && product.accountInformation.bank === "BANCO_1");
@@ -58,6 +67,13 @@ export class ProductsComponent implements OnInit {
 
 
       this.toggle = products.toggle;
+      this.loading = products.loading;
+      this.loaded = products.loaded;
+      this.error = products.error;
     });
+  }
+
+  loadProducts() {
+    this.store.dispatch(productsLoad());
   }
 }

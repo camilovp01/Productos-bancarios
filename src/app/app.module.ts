@@ -12,6 +12,8 @@ import { registerLocaleData } from '@angular/common';
 import localeCo from '@angular/common/locales/es-CO';
 import { PagesComponent } from './pages/pages.component';
 import { SharedModule } from './shared/shared.module';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
 registerLocaleData(localeCo, 'co');
 
 
@@ -31,7 +33,8 @@ registerLocaleData(localeCo, 'co');
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    EffectsModule.forRoot([AppEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
